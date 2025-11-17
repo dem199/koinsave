@@ -2,34 +2,34 @@
 
 A modern fintech dashboard built with Next.js 14, featuring authentication, transaction management, and a clean, responsive UI with dark mode support.
 
-## 🚀 Features
+##  Features
 
-- ✅ **Authentication System**
+-  **Authentication System**
   - Login & Signup with form validation
   - JWT token-based authentication
   - Protected routes
   - Persistent sessions
 
-- ✅ **Dashboard**
+-  **Dashboard**
   - Real-time balance display with toggle visibility
   - Transaction history with filtering (All, Sent, Received, Bills, Savings)
   - Send money functionality with validation
   - Quick action buttons
 
-- ✅ **User Experience**
+-  **User Experience**
   - Fully responsive design (mobile, tablet, desktop)
   - Dark mode with persistent preference in progress
   - Toast notifications for user feedback
   - Loading states and error handling
   - Smooth animations and transitions
 
-- ✅ **Design System**
+-  **Design System**
   - Koinsave brand colors (Green, White, Dark Gray)
   - Consistent component library
   - Tailwind CSS for styling
   - Clean, minimalist fintech aesthetic
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework:** Next.js 14 (App Router)
 - **Language:** JavaScript
@@ -40,7 +40,7 @@ A modern fintech dashboard built with Next.js 14, featuring authentication, tran
 - **Notifications:** React Hot Toast
 - **Mock API:** JSON Server
 
-## 📦 Installation
+##  Installation
 
 ### Prerequisites
 - Node.js 18+ installed
@@ -81,14 +81,14 @@ A modern fintech dashboard built with Next.js 14, featuring authentication, tran
    
    Navigate to `http://localhost:3000`
 
-## 🔐 Demo Credentials
+##  Demo Credentials
 
 Use these credentials to test the application:
 
 - **Email:** demo@koinsave.com
 - **Password:** Demo123!
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 koinsave-dashboard/
@@ -131,7 +131,7 @@ koinsave-dashboard/
 └── README.md                    # This file
 ```
 
-## 🎨 Key Features Explained
+##  Key Features Explained
 
 ### Authentication Flow
 1. User enters credentials on login/signup page
@@ -154,7 +154,7 @@ koinsave-dashboard/
 3. Toggle between light/dark themes
 4. Persists across sessions
 
-## 🚀 Deployment
+## Deployment
 
 ### Deploy to Vercel (Recommended)
 
@@ -192,7 +192,7 @@ koinsave-dashboard/
    - Configure environment variables
    - Deploy!
 
-## 📝 Available Scripts
+##  Available Scripts
 
 - `npm run dev` - Start development server with JSON Server
 - `npm run dev:next` - Start only Next.js dev server
@@ -201,7 +201,7 @@ koinsave-dashboard/
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 
-## 🔧 Environment Variables
+##  Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
@@ -209,7 +209,7 @@ koinsave-dashboard/
 | `NEXT_PUBLIC_APP_NAME` | Application name | `Koinsave` |
 | `NEXT_PUBLIC_APP_VERSION` | App version | `1.0.0` |
 
-## 🐛 Known Limitations
+##  Known Limitations
 
 - Mock API (JSON Server) - Replace with real backend for production
 - No email verification
@@ -217,7 +217,7 @@ koinsave-dashboard/
 - No two-factor authentication
 - Limited transaction history (mock data)
 
-## 🎯 Future Enhancements
+##  Future Enhancements
 
 - [ ] Real backend API integration
 - [ ] Email verification
@@ -230,7 +230,7 @@ koinsave-dashboard/
 - [ ] Transaction search
 - [ ] Receipt generation
 
-## 📄 License
+## License
 
 This project is created for demonstration purposes as part of a pre-interview task.
 
@@ -240,7 +240,7 @@ This project is created for demonstration purposes as part of a pre-interview ta
 - GitHub: [@yourusername](https://github.com/yourusername)
 - Email: your.email@example.com
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Next.js team for the amazing framework
 - Tailwind CSS for the utility-first CSS framework
@@ -249,4 +249,4 @@ This project is created for demonstration purposes as part of a pre-interview ta
 
 ---
 
-**Built with ❤️ for Koinsave Frontend Developer Position**
+**Built with love for Koinsave**
