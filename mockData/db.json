@@ -1,0 +1,147 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "demo@koinsave.com",
+      "password": "Demo123!",
+      "name": "John Doe",
+      "balance": 25330.5,
+      "currency": "USD",
+      "accountNumber": "1234567890",
+      "createdAt": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": "2",
+      "email": "jane@koinsave.com",
+      "password": "Jane123!",
+      "name": "Jane Smith",
+      "balance": 15200.75,
+      "currency": "USD",
+      "accountNumber": "0987654321",
+      "createdAt": "2024-02-20T14:45:00Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn_001",
+      "userId": "1",
+      "type": "receive",
+      "amount": 5000,
+      "description": "Salary Payment",
+      "recipient": "John Doe",
+      "status": "completed",
+      "date": "2024-03-15T09:30:00Z",
+      "category": "income"
+    },
+    {
+      "id": "txn_002",
+      "userId": "1",
+      "type": "send",
+      "amount": 1200.5,
+      "description": "Rent Payment",
+      "recipient": "Landlord Properties",
+      "status": "completed",
+      "date": "2024-03-14T15:20:00Z",
+      "category": "housing"
+    },
+    {
+      "id": "txn_003",
+      "userId": "1",
+      "type": "bills",
+      "amount": 85.3,
+      "description": "Electricity Bill",
+      "recipient": "Power Company",
+      "status": "completed",
+      "date": "2024-03-13T11:45:00Z",
+      "category": "utilities"
+    },
+    {
+      "id": "txn_004",
+      "userId": "1",
+      "type": "savings",
+      "amount": 500,
+      "description": "Monthly Savings Goal",
+      "recipient": "Savings Account",
+      "status": "completed",
+      "date": "2024-03-12T08:00:00Z",
+      "category": "savings"
+    },
+    {
+      "id": "txn_005",
+      "userId": "1",
+      "type": "send",
+      "amount": 45.99,
+      "description": "Online Shopping",
+      "recipient": "Amazon",
+      "status": "completed",
+      "date": "2024-03-11T19:30:00Z",
+      "category": "shopping"
+    },
+    {
+      "id": "txn_006",
+      "userId": "1",
+      "type": "receive",
+      "amount": 200,
+      "description": "Freelance Payment",
+      "recipient": "Client ABC",
+      "status": "completed",
+      "date": "2024-03-10T16:15:00Z",
+      "category": "income"
+    },
+    {
+      "id": "txn_007",
+      "userId": "1",
+      "type": "bills",
+      "amount": 129.99,
+      "description": "Internet Bill",
+      "recipient": "ISP Provider",
+      "status": "completed",
+      "date": "2024-03-09T10:00:00Z",
+      "category": "utilities"
+    },
+    {
+      "id": "txn_008",
+      "userId": "1",
+      "type": "send",
+      "amount": 75,
+      "description": "Grocery Shopping",
+      "recipient": "Whole Foods",
+      "status": "completed",
+      "date": "2024-03-08T14:30:00Z",
+      "category": "food"
+    },
+    {
+      "id": "txn_1763355059695_6676",
+      "userId": "1",
+      "type": "send",
+      "amount": 100,
+      "description": "Test payment",
+      "recipient": "Jane Smith",
+      "status": "completed",
+      "date": "2025-11-17T04:50:59.695Z",
+      "category": "transfer"
+    }
+  ],
+  "savings": [
+    {
+      "id": "sav_001",
+      "userId": "1",
+      "goalName": "Emergency Fund",
+      "targetAmount": 10000,
+      "currentAmount": 6500,
+      "progress": 65,
+      "deadline": "2024-12-31",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": "sav_002",
+      "userId": "1",
+      "goalName": "Vacation Fund",
+      "targetAmount": 3000,
+      "currentAmount": 1200,
+      "progress": 40,
+      "deadline": "2024-08-01",
+      "createdAt": "2024-02-01T00:00:00Z"
+    }
+  ]
+}
