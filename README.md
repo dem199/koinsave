@@ -18,7 +18,7 @@ A modern fintech dashboard built with Next.js 14, featuring authentication, tran
 
 -  **User Experience**
   - Fully responsive design (mobile, tablet, desktop)
-  - Dark mode with persistent preference in progress
+  - Dark mode with persistent preference still in progress
   - Toast notifications for user feedback
   - Loading states and error handling
   - Smooth animations and transitions
@@ -50,7 +50,7 @@ A modern fintech dashboard built with Next.js 14, featuring authentication, tran
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone <https://github.com/dem199/koinsave/>
    cd koinsave-dashboard
    ```
 
@@ -156,14 +156,14 @@ koinsave-dashboard/
 
 ## Deployment
 
-### Deploy to Vercel (Recommended)
+### Deploy to Vercel
 
 1. **Push code to GitHub**
    ```bash
    git init
    git add .
    git commit -m "Initial commit"
-   git remote add origin <your-repo-url>
+   git remote add origin <https://github.com/dem199/koinsave/>
    git push -u origin main
    ```
 
@@ -211,13 +211,13 @@ koinsave-dashboard/
 
 ##  Known Limitations
 
-- Mock API (JSON Server) - Replace with real backend for production
+- Mock API (JSON Server) - replace with real backend for production
 - No email verification
 - No password reset functionality
 - No two-factor authentication
 - Limited transaction history (mock data)
 
-##  Future Enhancements
+##  Future Enhancements 
 
 - [ ] Real backend API integration
 - [ ] Email verification
@@ -229,16 +229,17 @@ koinsave-dashboard/
 - [ ] Multi-currency support
 - [ ] Transaction search
 - [ ] Receipt generation
+- [ ] Dackmode functionality still in progress, will update shortly
 
 ## License
 
 This project is created for demonstration purposes as part of a pre-interview task.
 
-## 👤 Author
+## Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: (https://github.com/dem199)
+- Email: olatunbosunopeyemi186035@gmail.com.com
 
 ##  Acknowledgments
 
@@ -249,4 +250,4 @@ This project is created for demonstration purposes as part of a pre-interview ta
 
 ---
 
-**Built with love for Koinsave**
+**Built with love for Koinsave By Optimistic**

@@ -13,7 +13,7 @@ export default function DashboardPage() {
   const [refreshKey, setRefreshKey] = useState(0);
 
   const handleSendMoneySuccess = () => {
-    // Refresh transactions list by changing key
+    // This line will refresh transactions list by changing key
     setRefreshKey(prev => prev + 1);
   };
 
@@ -23,9 +23,7 @@ export default function DashboardPage() {
         <DashboardHeader />
         
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="p-4 bg-white dark:bg-black text-black dark:text-white">
-  TEST: This should be white bg / black text in light mode, and black bg / white text in dark mode
-</div>
+          
           {/* Welcome Section */}
           <div className="mb-8">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
