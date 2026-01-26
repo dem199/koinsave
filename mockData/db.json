@@ -5,7 +5,7 @@
       "email": "demo@koinsave.com",
       "password": "Demo123!",
       "name": "John Doe",
-      "balance": 25330.5,
+      "balance": 25318.5,
       "currency": "USD",
       "accountNumber": "1234567890",
       "createdAt": "2024-01-15T10:30:00Z"
@@ -120,6 +120,28 @@
       "status": "completed",
       "date": "2025-11-17T04:50:59.695Z",
       "category": "transfer"
+    },
+    {
+      "id": "txn_1769463050876_88",
+      "userId": "1",
+      "type": "send",
+      "amount": 10,
+      "description": "for food",
+      "recipient": "Ope Yemi",
+      "status": "completed",
+      "date": "2026-01-26T21:30:50.876Z",
+      "category": "transfer"
+    },
+    {
+      "id": "txn_1769463285828_803",
+      "userId": "1",
+      "type": "savings",
+      "amount": 2,
+      "description": "Data Subscription",
+      "recipient": "Ifeoluwa",
+      "status": "completed",
+      "date": "2026-01-26T00:00:00.000Z",
+      "category": "savings"
     }
   ],
   "savings": [

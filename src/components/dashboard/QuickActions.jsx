@@ -1,7 +1,6 @@
-
-
 import React from 'react';
 import { Send, Download, CreditCard, PiggyBank } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 const QuickActions = ({ onSendMoney }) => {
   const actions = [
@@ -15,19 +14,28 @@ const QuickActions = ({ onSendMoney }) => {
       icon: Download,
       label: 'Request',
       color: 'blue',
-      onClick: () => alert('Request money feature coming soon!'),
+      onClick: () => toast.info('Request money feature coming soon!', {
+        icon: '📥',
+        duration: 2000,
+      }),
     },
     {
       icon: CreditCard,
       label: 'Bills',
       color: 'purple',
-      onClick: () => alert('Pay bills feature coming soon!'),
+      onClick: () => toast.info('Pay bills feature coming soon!', {
+        icon: '💳',
+        duration: 2000,
+      }),
     },
     {
       icon: PiggyBank,
       label: 'Save',
       color: 'pink',
-      onClick: () => alert('Savings feature coming soon!'),
+      onClick: () => toast.info('Savings feature coming soon!', {
+        icon: '🐷',
+        duration: 2000,
+      }),
     },
   ];
 

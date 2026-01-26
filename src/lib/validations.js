@@ -50,10 +50,104 @@ export const sendMoneySchema = z.object({
     .min(1, 'Amount is required')
     .refine((val) => !isNaN(parseFloat(val)) && parseFloat(val) > 0, {
       message: 'Amount must be a positive number',
+    })
+    .refine((val) => parseFloat(val) <= 1000000, {
+      message: 'Amount cannot exceed $1,000,000',
     }),
   description: z
     .string()
     .min(1, 'Description is required')
     .min(3, 'Description must be at least 3 characters')
     .max(100, 'Description must be less than 100 characters'),
+});
+
+// Add expense/transaction validation schema
+export const addExpenseSchema = z.object({
+  type: z
+    .enum(['send', 'receive', 'bills', 'savings'], {
+      errorMap: () => ({ message: 'Please select a transaction type' }),
+    }),
+  amount: z
+    .string()
+    .min(1, 'Amount is required')
+    .refine((val) => !isNaN(parseFloat(val)) && parseFloat(val) > 0, {
+      message: 'Amount must be a positive number',
+    })
+    .refine((val) => parseFloat(val) <= 1000000, {
+      message: 'Amount cannot exceed $1,000,000',
+    }),
+  description: z
+    .string()
+    .min(1, 'Description is required')
+    .min(3, 'Description must be at least 3 characters')
+    .max(200, 'Description must be less than 200 characters'),
+  category: z
+    .string()
+    .min(1, 'Category is required'),
+  recipient: z
+    .string()
+    .max(100, 'Recipient/source name must be less than 100 characters')
+    .optional(),
+  date: z
+    .string()
+    .min(1, 'Date is required')
+    .refine((val) => !isNaN(Date.parse(val)), {
+      message: 'Invalid date format',
+    })
+    .refine((val) => new Date(val) <= new Date(), {
+      message: 'Date cannot be in the future',
+    }),
+});
+
+// Budget validation schema
+export const budgetSchema = z.object({
+  category: z
+    .string()
+    .min(1, 'Category is required'),
+  amount: z
+    .string()
+    .min(1, 'Budget amount is required')
+    .refine((val) => !isNaN(parseFloat(val)) && parseFloat(val) > 0, {
+      message: 'Budget must be a positive number',
+    }),
+  period: z
+    .enum(['daily', 'weekly', 'monthly', 'yearly'], {
+      errorMap: () => ({ message: 'Please select a budget period' }),
+    }),
+  alertThreshold: z
+    .string()
+    .optional()
+    .refine((val) => !val || (!isNaN(parseFloat(val)) && parseFloat(val) >= 0 && parseFloat(val) <= 100), {
+      message: 'Alert threshold must be between 0 and 100',
+    }),
+});
+
+// Savings goal validation schema
+export const savingsGoalSchema = z.object({
+  goalName: z
+    .string()
+    .min(1, 'Goal name is required')
+    .min(3, 'Goal name must be at least 3 characters')
+    .max(50, 'Goal name must be less than 50 characters'),
+  targetAmount: z
+    .string()
+    .min(1, 'Target amount is required')
+    .refine((val) => !isNaN(parseFloat(val)) && parseFloat(val) > 0, {
+      message: 'Target amount must be a positive number',
+    }),
+  deadline: z
+    .string()
+    .min(1, 'Deadline is required')
+    .refine((val) => !isNaN(Date.parse(val)), {
+      message: 'Invalid date format',
+    })
+    .refine((val) => new Date(val) > new Date(), {
+      message: 'Deadline must be in the future',
+    }),
+  initialAmount: z
+    .string()
+    .optional()
+    .refine((val) => !val || (!isNaN(parseFloat(val)) && parseFloat(val) >= 0), {
+      message: 'Initial amount must be a positive number or zero',
+    }),
 });

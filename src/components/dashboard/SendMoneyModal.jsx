@@ -11,7 +11,7 @@ import Input from '@/components/shared/Input';
 import { X, Send, User, DollarSign, FileText } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-// Helper function to generate transaction ID (moved outside component)
+// This is the Helper function to generate transaction ID (moved outside component)
 const generateTransactionId = () => {
   return `txn_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
 };
