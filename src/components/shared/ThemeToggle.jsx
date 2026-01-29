@@ -1,58 +1,32 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState('light');
-  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') return 'light';
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    setMounted(true);
-    
-    
     const savedTheme = localStorage.getItem('theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const initialTheme = savedTheme || systemTheme;
-    
-    setTheme(initialTheme);
-    
-    if (initialTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
+    return savedTheme || systemTheme;
+  });
 
-  // Don't render anything until mounted
-  if (!mounted) {
-    return <div className="w-10 h-10" />;
-  }
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <button
-      onClick={toggleTheme}
-      className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-110 active:scale-95"
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+      className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700"
       aria-label="Toggle theme"
-      suppressHydrationWarning
     >
-      {theme === 'light' ? (
-        <Moon size={20} className="text-gray-700" />
-      ) : (
-        <Sun size={20} className="text-yellow-500" />
-      )}
+      {theme === 'light' ? <Moon /> : <Sun />}
     </button>
   );
 };

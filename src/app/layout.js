@@ -1,4 +1,3 @@
-
 import { AuthProvider } from '@/context/AuthContext';
 import { Toaster } from 'react-hot-toast';
 import './globals.css';
@@ -15,27 +14,46 @@ export default function RootLayout({ children }) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              try {
-                const theme = localStorage.getItem('theme') || 
-                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                if (theme === 'dark') {
-                  document.documentElement.classList.add('dark');
+              (function() {
+                try {
+                  const theme = localStorage.getItem('theme');
+                  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  const initialTheme = theme || systemTheme;
+                  
+                  if (initialTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {
+                  console.error('Theme initialization error:', e);
                 }
-              } catch (e) {}
+              })();
             `,
           }}
         />
       </head>
-      <body>
+      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white no-transition">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Remove no-transition class after page load for smooth transitions
+              window.addEventListener('load', function() {
+                document.body.classList.remove('no-transition');
+              });
+            `,
+          }}
+        />
         <AuthProvider>
           {children}
           <Toaster
             position="top-right"
             toastOptions={{
               duration: 3000,
+              className: 'dark:bg-gray-800 dark:text-white',
               style: {
-                background: '#fff',
-                color: '#1F2937',
+                background: 'var(--toast-bg)',
+                color: 'var(--toast-color)',
                 padding: '16px',
                 borderRadius: '8px',
                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',

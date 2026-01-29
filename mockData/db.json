@@ -5,7 +5,7 @@
       "email": "demo@koinsave.com",
       "password": "Demo123!",
       "name": "John Doe",
-      "balance": 25318.5,
+      "balance": 25317.5,
       "currency": "USD",
       "accountNumber": "1234567890",
       "createdAt": "2024-01-15T10:30:00Z"
@@ -142,6 +142,17 @@
       "status": "completed",
       "date": "2026-01-26T00:00:00.000Z",
       "category": "savings"
+    },
+    {
+      "id": "txn_1769600391504_9401",
+      "userId": "1",
+      "type": "send",
+      "amount": 1,
+      "description": "school fee",
+      "recipient": "Ifeoluwa",
+      "status": "completed",
+      "date": "2026-01-28T11:39:51.504Z",
+      "category": "transfer"
     }
   ],
   "savings": [
