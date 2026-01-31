@@ -17,33 +17,17 @@ export default function RootLayout({ children }) {
               (function() {
                 try {
                   const theme = localStorage.getItem('theme');
-                  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  const initialTheme = theme || systemTheme;
-                  
-                  if (initialTheme === 'dark') {
+                  // Only apply dark if explicitly set - default is light
+                  if (theme === 'dark') {
                     document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
                   }
-                } catch (e) {
-                  console.error('Theme initialization error:', e);
-                }
+                } catch (e) {}
               })();
             `,
           }}
         />
       </head>
-      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white no-transition">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Remove no-transition class after page load for smooth transitions
-              window.addEventListener('load', function() {
-                document.body.classList.remove('no-transition');
-              });
-            `,
-          }}
-        />
+      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
         <AuthProvider>
           {children}
           <Toaster
